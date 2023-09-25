@@ -1,26 +1,10 @@
-public class Main
-{
-    public static void main(String[] args) throws Exp
+public class Exp extends Exception{
+    public Exp()
     {
-        GetFactorial(13);
+        this("Error detected, we accept number between 1 and 10");
     }
-
-    public static int  GetFactorial(int nb) throws Exp
-    {
-        int result=1;
-        if (nb>10 || nb<1)
-        {
-            throw new Exp("number must be between 1 and 10");
-        }
-        for (int i=1; i<=nb; i++)
-        {
-            result=result*i;
-
-        }
-        System.out.println(result);
-        return(result);
-
+    public Exp(String message){
+        super(message);
     }
-
 
 }
